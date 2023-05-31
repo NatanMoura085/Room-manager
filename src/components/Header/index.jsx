@@ -1,6 +1,8 @@
-import { HeaderContainer, HeaderLogo,HeaderNav } from "./stylus";
 
+import { HeaderContainer, HeaderLogo, HeaderNav } from "./stylus";
+import { useLocation} from "react-router-dom";
 const Header = () => {
+  const location = useLocation();
   return (
     <>
       <HeaderContainer>
@@ -8,16 +10,35 @@ const Header = () => {
         <HeaderNav>
           <ul>
             <li>
-              <a href="/" className="active">Home</a>
+              <a href="/" className={location.pathname === "/" ? "active" : ""}>
+                Home
+              </a>
             </li>
             <li>
-              <a href="/salas">Salas</a>
+              <a
+                href="/salas"
+                className={location.pathname === "/salas" ? "active" : ""}
+              >
+                Salas
+              </a>
             </li>
             <li>
-              <a href="/responsaveis">Responsáveis</a>
+              <a
+                href="/responsaveis"
+                className={
+                  location.pathname === "/responsaveis" ? "active" : ""
+                }
+              >
+                Responsáveis
+              </a>
             </li>
             <li>
-              <a href="/eventos">Eventos</a>
+              <a
+                href="/eventos"
+                className={location.pathname === "/eventos" ? "active" : ""}
+              >
+                Eventos
+              </a>
             </li>
           </ul>
         </HeaderNav>

@@ -28,7 +28,8 @@ export const HeaderNav = styled.nav`
   }
 
   & li a.active {
-
-    
+    background-color: white;
+    color: black;
+    font-weight: bold;
   }
 `;
